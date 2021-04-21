@@ -1,5 +1,5 @@
 /*!
- * SakeCharts.js v0.0.1
+ * SakeCharts.js v0.0.2
  * https://code-for-sake.github.io/
  * (c) 2020 Code for SAKE
  * Released under the MIT License
@@ -121,7 +121,7 @@ function SakeChart(datasets = [], selector="") {
   };
   this.drawMap = function(selector = this.selector){
     let ctx = document.getElementById(selector).getContext('2d');
-   	new Chart(ctx,
+   	return new Chart(ctx,
    		{
    			plugins: [{
    				beforeDatasetsDraw: this.drawBackground
@@ -188,7 +188,7 @@ function SakeChart(datasets = [], selector="") {
     };
    this.drawRadar = function(selector = this.selector) {
      let ctx = document.getElementById(selector).getContext('2d');
-     new Chart(ctx, {
+     return new Chart(ctx, {
        type: 'radar',
        data: {
          labels: this.RADAR_LABELS,
